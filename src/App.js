@@ -3,21 +3,26 @@ import {
   Phone, Calendar, MapPin, Clock, Star, Mail, ChevronRight,
   Menu, X, Heart, Stethoscope, Baby, Scissors, Activity,
   Microscope, Syringe, Ambulance, Pill, Database, AlertCircle,
-  MessageCircle, ChevronLeft, CheckCircle, Shield, Award, Users, Building2
+  MessageCircle, ChevronLeft, CheckCircle, Shield, Award, Users, Building2, Bone, Droplet, Footprints, Brain, Lock
 } from 'lucide-react';
+import { GiKidneys } from 'react-icons/gi';
 
 /* ─────────────────────────────────────────────
-   DATA
+   DATA (UPDATED FOR RAJAHMUNDRY)
 ───────────────────────────────────────────── */
 const services = [
-  { id: 1, name: 'General Medicine', icon: Stethoscope, description: 'Comprehensive primary care for all ages with preventive health checkups.', department: 'Medicine', color: 'from-blue-500 to-cyan-500' },
-  { id: 2, name: 'Vascular Surgery', icon: Activity, description: 'Advanced treatment for blood vessel conditions using minimally invasive techniques.', department: 'Surgery', color: 'from-rose-500 to-pink-500' },
-  { id: 3, name: 'Gynecology', icon: Baby, description: "Expert care for women's reproductive health, pregnancy, and childbirth.", department: "Women's Health", color: 'from-purple-500 to-violet-500' },
-  { id: 4, name: 'General Surgery', icon: Scissors, description: 'Minimally invasive surgical procedures with advanced laparoscopic equipment.', department: 'Surgery', color: 'from-amber-500 to-orange-500' },
-  { id: 5, name: 'Cardiology', icon: Heart, description: 'Complete heart care including diagnostics, interventions, and rehabilitation.', department: 'Cardiac Sciences', color: 'from-red-500 to-rose-500' },
-  { id: 6, name: 'Orthopedics', icon: Activity, description: 'Bone, joint, and muscle treatments including joint replacement surgery.', department: 'Orthopedics', color: 'from-green-500 to-emerald-500' },
-  { id: 7, name: 'Neurology', icon: Microscope, description: 'Advanced care for brain, spine, and nervous system disorders.', department: 'Neurosciences', color: 'from-indigo-500 to-blue-500' },
-  { id: 8, name: 'Pediatrics', icon: Baby, description: 'Specialized healthcare for infants, children, and adolescents.', department: 'Pediatrics', color: 'from-teal-500 to-cyan-500' },
+  { id: 1, name: 'General Medicine', icon: Stethoscope, description: 'Comprehensive primary care for fever, diabetes, BP, infections, thyroid, and chronic diseases with accurate diagnosis & preventive care.', department: 'Medicine', color: 'from-blue-500 to-cyan-500' },
+  { id: 2, name: 'Vascular Surgery', icon: Activity, description: 'Advanced treatment for varicose veins, diabetic foot, peripheral artery disease, vascular blockages & leg pain using minimally invasive techniques.', department: 'Vascular Care', color: 'from-rose-500 to-pink-500' },
+  { id: 3, name: 'Gynecology', icon: Baby, description: "Complete women's healthcare including pregnancy care, normal & high-risk delivery, PCOS treatment, and menstrual disorder management.", department: "Women's Health", color: 'from-purple-500 to-violet-500' },
+  { id: 4, name: 'General Surgery', icon: Scissors, description: 'Expert surgical care for appendix, hernia, gallbladder, and other major/minor procedures with modern operation theatres.', department: 'Surgery', color: 'from-amber-500 to-orange-500' },
+  { id: 5, name: 'Cardiology', icon: Heart, description: 'Complete heart care including diagnostics, interventions, and rehabilitation for cardiac conditions.', department: 'Cardiac Sciences', color: 'from-red-500 to-rose-500' },
+  { id: 6, name: 'Orthopedics', icon: Bone, description: 'Expert treatment for fractures, joint pain, arthritis, sports injuries, and spine disorders with trauma care.', department: 'Orthopedics', color: 'from-green-500 to-emerald-500' },
+  { id: 7, name: 'Neurology', icon: Brain, description: 'Advanced care for stroke, headache, seizures, epilepsy, nerve disorders, and paralysis treatment.', department: 'Neurosciences', color: 'from-indigo-500 to-blue-500' },
+  { id: 8, name: 'Pediatrics', icon: Baby, description: 'Specialized healthcare for children including fever treatment, vaccination, nutrition guidance, and newborn care.', department: 'Pediatrics', color: 'from-teal-500 to-cyan-500' },
+  { id: 9, name: 'Nephrology', icon: GiKidneys, description: 'Comprehensive kidney care including kidney disease treatment, dialysis support, hypertension & diabetic kidney management.', department: 'Nephrology', color: 'from-sky-500 to-blue-500' },
+  { id: 10, name: 'Urology', icon: Droplet, description: 'Advanced treatment for kidney stones, urinary infections, prostate care, and male urology disorders.', department: 'Urology', color: 'from-indigo-500 to-purple-500' },
+  { id: 11, name: 'Endovascular Surgery', icon: Activity, description: 'Minimally invasive procedures including angioplasty, stenting, AV fistula, and peripheral vascular interventions.', department: 'Vascular Care', color: 'from-pink-500 to-rose-500' },
+  { id: 12, name: 'Diabetology', icon: Droplet, description: 'Specialized care for diabetes management, prevention of complications, and lifestyle guidance.', department: 'Medicine', color: 'from-orange-500 to-red-500' },
 ];
 
 const doctors = [
@@ -67,25 +72,27 @@ const doctors = [
 ];
 
 const testimonials = [
-  { id: 1, name: 'Ramesh Patel', rating: 5, text: "Excellent care and compassionate staff. The doctors took time to explain everything. My father's heart surgery was successful beyond expectations.", date: '2024-02-15', location: 'Chennai' },
-  { id: 2, name: 'Sneha Gupta', rating: 5, text: 'State-of-the-art facilities and very professional service. The maternity ward was exceptional with caring nurses and modern equipment. Highly recommended!', date: '2024-02-10', location: 'Bangalore' },
-  { id: 3, name: 'Amit Singh', rating: 4, text: 'Good experience overall. The emergency response was quick and efficient. The doctors are very knowledgeable and treatment was effective.', date: '2024-02-05', location: 'Hyderabad' },
-  { id: 4, name: 'Lakshmi Nair', rating: 5, text: "Best hospital in the city! The vascular surgery department is top-notch. Dr. Rajesh Kumar performed my husband's surgery with great care.", date: '2024-01-28', location: 'Chennai' },
+  { id: 1, name: 'Srinivas Rao', rating: 5, text: "Excellent care and compassionate staff. My father's vascular surgery was successful and recovery was quick. Best hospital near Devi Chowk!", date: '2024-02-15', location: 'Rajahmundry' },
+  { id: 2, name: 'Devi Priya', rating: 5, text: 'State-of-the-art facilities and very professional service. The maternity ward was exceptional with caring nurses. Highly recommended for women\'s healthcare!', date: '2024-02-10', location: 'Lakshmivarapupeta' },
+  { id: 3, name: 'Satish Kumar', rating: 4, text: 'Good experience overall. The emergency response was quick and efficient. The doctors are very knowledgeable and treatment was effective for my diabetic condition.', date: '2024-02-05', location: 'Rajahmundry' },
+  { id: 4, name: 'Lakshmi Nair', rating: 5, text: "Best multispeciality hospital in Rajahmundry! The vascular surgery department is top-notch. Dr. Satish performed my husband's surgery with great care.", date: '2024-01-28', location: 'Devi Chowk' },
 ];
 
 const facilities = [
-  { name: 'Intensive Care Unit', icon: Database, description: '24/7 critical care monitoring with advanced life support systems', specs: '40+ Beds' },
-  { name: 'Modern Laboratory', icon: Microscope, description: 'Advanced diagnostic equipment for accurate test results', specs: 'NABL Accredited' },
-  { name: '24/7 Pharmacy', icon: Pill, description: 'Full-service pharmacy with genuine medicines', specs: 'Free Home Delivery' },
-  { name: 'Emergency Services', icon: Ambulance, description: 'Rapid response team with advanced life support ambulances', specs: 'Response: 10 mins' },
-  { name: 'Cath Lab', icon: Heart, description: 'Advanced cardiac catheterization laboratory', specs: '24/7 Available' },
-  { name: 'Operation Theatres', icon: Scissors, description: 'Modular OTs with laminar airflow', specs: '8 Modular OTs' },
+  { name: 'Intensive Care Unit', icon: Database, description: '24/7 critical care monitoring with advanced life support systems for emergency & trauma patients.', specs: 'Fully Equipped ICU' },
+  { name: 'Modern Laboratory', icon: Microscope, description: 'Advanced diagnostic equipment for accurate test results and rapid diagnostics.', specs: 'Rapid Reports' },
+  { name: '24/7 Pharmacy', icon: Pill, description: 'Full-service pharmacy with genuine medicines and free home delivery options.', specs: 'Genuine Medicines' },
+  { name: 'Emergency Services', icon: Ambulance, description: 'Rapid response team with advanced life support ambulances available 24/7.', specs: 'Response: 10 mins' },
+  { name: 'Cath Lab', icon: Heart, description: 'Advanced cardiac catheterization laboratory for angioplasty and stenting procedures.', specs: 'Modern Technology' },
+  { name: 'Operation Theatres', icon: Scissors, description: 'Modular OTs with laminar airflow for safe and effective surgical procedures.', specs: '8 Modular OTs' },
+  { name: 'Dialysis Center', icon: Activity, description: 'Advanced dialysis care with modern machines, expert monitoring, and hygienic environment.', specs: 'Affordable Dialysis' },
+  { name: 'Trauma Care', icon: Ambulance, description: 'Specialized trauma care unit for accident victims and emergency surgical interventions.', specs: '24/7 Available' },
 ];
 
 const blogPosts = [
-  { id: 1, title: 'Understanding Heart Health: Prevention Tips', excerpt: 'Learn about lifestyle changes that can significantly reduce your risk of heart disease and improve longevity.', date: '2024-02-20', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&q=80', category: 'Cardiology' },
-  { id: 2, title: 'Advances in Minimally Invasive Surgery', excerpt: 'Discover how laparoscopic techniques are reducing recovery time and improving patient outcomes dramatically.', date: '2024-02-15', image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop&q=80', category: 'Surgery' },
-  { id: 3, title: "Women's Health: Annual Checkups Matter", excerpt: 'Regular gynecological screenings can detect issues early. Here is what you need to know about your health.', date: '2024-02-10', image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop&q=80', category: "Women's Health" },
+  { id: 1, title: 'Understanding Vascular Health: Preventing Leg Pain & Swelling', excerpt: 'Learn about lifestyle changes that can significantly reduce your risk of vascular diseases and improve blood circulation.', date: '2024-02-20', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop&q=80', category: 'Vascular Care' },
+  { id: 2, title: 'Advances in Minimally Invasive Vascular Surgery', excerpt: 'Discover how endovascular techniques like angioplasty and stenting are reducing recovery time dramatically.', date: '2024-02-15', image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop&q=80', category: 'Surgery' },
+  { id: 3, title: "Women's Health: Essential Annual Checkups", excerpt: 'Regular gynecological screenings can detect issues early. Here is what you need to know about your health in Rajahmundry.', date: '2024-02-10', image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=400&fit=crop&q=80', category: "Women's Health" },
 ];
 
 const stats = [
@@ -197,7 +204,7 @@ const Navbar = () => {
 };
 
 /* ─────────────────────────────────────────────
-   HERO
+   HERO (UPDATED FOR RAJAHMUNDRY)
 ───────────────────────────────────────────── */
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
@@ -209,7 +216,6 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=1080&fit=crop&q=80" alt="Hospital" className="w-full h-full object-cover scale-105" style={{ animation: 'kenBurns 20s ease-in-out infinite alternate' }} />
         <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/80 to-teal-900/75" />
-        {/* Decorative blobs */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
       </div>
@@ -225,8 +231,8 @@ const Hero = () => {
             Dharani<br />
             <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">Hospital</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-blue-100 mb-4 font-light">Multi-Speciality Care with Compassion & Excellence</p>
-          <p className="text-base text-blue-200/80 mb-10">24/7 Emergency Services • Advanced Medical Technology • 200+ Expert Doctors</p>
+          <p className="text-xl sm:text-2xl text-blue-100 mb-4 font-light">Best Multispeciality Hospital in Rajahmundry</p>
+          <p className="text-base text-blue-200/80 mb-10">24 Hours Emergency | Expert Doctors | Affordable Healthcare | Advanced Treatments</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#appointment" className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-teal-500/30 hover:-translate-y-1 transition-all duration-300">
@@ -245,6 +251,13 @@ const Hero = () => {
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-5 py-2 rounded-full text-sm border border-white/20">
               <Ambulance className="w-4 h-4 text-teal-300" /> Ambulance: 108
             </span>
+          </div>
+
+          {/* Location highlight */}
+          <div className="mt-6 text-blue-200 text-sm flex justify-center gap-4">
+            <span>📍 Near Devi Chowk</span>
+            <span>📍 Lakshmivarapupeta</span>
+            <span>📍 Rajahmundry</span>
           </div>
         </div>
 
@@ -272,7 +285,7 @@ const Hero = () => {
 };
 
 /* ─────────────────────────────────────────────
-   ABOUT
+   ABOUT (UPDATED FOR RAJAHMUNDRY)
 ───────────────────────────────────────────── */
 const About = () => (
   <section id="about" className="py-20 lg:py-28 bg-white">
@@ -282,17 +295,20 @@ const About = () => (
         <Reveal>
           <span className="inline-block text-teal-600 font-bold text-sm uppercase tracking-widest mb-3">About Us</span>
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-            Welcome to<br />
-            <span className="text-blue-600">Dharani Hospital</span>
+            Trusted Private Hospital<br />
+            <span className="text-blue-600">Near Devi Chowk Rajahmundry</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            Founded in 2005, Dharani Hospital has grown to become one of the most trusted healthcare institutions in the region. With a commitment to excellence and compassion, we have served over <strong className="text-blue-600">500,000+ patients</strong> across all specialties.
+            Proudly recognized as one of the best hospitals in Rajahmundry, Dharani Hospital delivers compassionate healthcare with advanced medical technology. Conveniently located near <strong className="text-blue-600">Devi Chowk and Lakshmivarapupeta</strong>, we provide accessible and affordable medical care for patients from across the city.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+            Whether you are searching for a general hospital in Rajahmundry, a private hospital near Devi Chowk, or a reliable 24 hours hospital, our experienced medical team is here to help you every day. Our goal is to provide personalized treatment, faster recovery, and high-quality healthcare services for every patient.
           </p>
 
           <div className="space-y-5 mb-8">
             {[
               { icon: Heart, title: 'Our Mission', text: 'To provide accessible, high-quality healthcare with empathy and integrity, ensuring every patient receives the best possible treatment.' },
-              { icon: Award, title: 'Our Vision', text: 'To be the most trusted healthcare institution in India, setting new standards in medical excellence and patient experience.' },
+              { icon: Award, title: 'Our Vision', text: 'To be the most trusted healthcare institution in Rajahmundry, setting new standards in medical excellence and patient experience.' },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex gap-4 p-4 rounded-2xl bg-blue-50 hover:bg-blue-100 transition-colors duration-200 group">
                 <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
@@ -328,13 +344,13 @@ const About = () => (
                 <CheckCircle className="w-5 h-5 text-emerald-600" />
               </div>
               <div>
-                <div className="font-bold text-gray-900 text-sm">NABH & NABL</div>
-                <div className="text-xs text-gray-500">Accredited Hospital</div>
+                <div className="font-bold text-gray-900 text-sm">Near Devi Chowk</div>
+                <div className="text-xs text-gray-500">Lakshmivarapupeta, Rajahmundry</div>
               </div>
             </div>
             <div className="absolute -top-6 -right-6 bg-gradient-to-br from-blue-600 to-teal-600 rounded-2xl shadow-xl px-5 py-4 text-white">
-              <div className="font-black text-2xl">18+</div>
-              <div className="text-xs text-blue-100">Years of Excellence</div>
+              <div className="font-black text-2xl">24/7</div>
+              <div className="text-xs text-blue-100">Emergency Care</div>
             </div>
           </div>
         </Reveal>
@@ -344,7 +360,7 @@ const About = () => (
 );
 
 /* ─────────────────────────────────────────────
-   SERVICES
+   SERVICES (UPDATED)
 ───────────────────────────────────────────── */
 const Services = () => {
   const [dept, setDept] = useState('all');
@@ -355,9 +371,9 @@ const Services = () => {
     <section id="services" className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-12">
-          <span className="text-teal-600 font-bold text-sm uppercase tracking-widest">Our Expertise</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-4">Medical Specialities</h2>
-          <p className="text-gray-500 max-w-xl mx-auto">Comprehensive care across all major medical disciplines with advanced technology and expert specialists</p>
+          <span className="text-teal-600 font-bold text-sm uppercase tracking-widest">Our Specialities</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-4">Multispeciality Hospital Near Devi Chowk Rajahmundry</h2>
+          <p className="text-gray-500 max-w-xl mx-auto">We provide expert medical services across multiple departments with experienced doctors and advanced medical equipment</p>
         </Reveal>
 
         {/* Filter */}
@@ -396,7 +412,7 @@ const Services = () => {
 };
 
 /* ─────────────────────────────────────────────
-   DOCTORS
+   DOCTORS (UNCHANGED - KEPT ORIGINAL)
 ───────────────────────────────────────────── */
 const Doctors = () => {
   const [selected, setSelected] = useState(null);
@@ -415,11 +431,11 @@ const Doctors = () => {
           </span>
 
           <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-3 mb-5">
-            Meet Our Expert Specialists
+            Best Doctors Near Devi Chowk Rajahmundry
           </h2>
 
           <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-            Dedicated medical professionals committed to exceptional patient care.
+            Our hospital is home to experienced physicians, skilled surgeons, vascular specialists, emergency care experts and diagnostic specialists.
           </p>
         </Reveal>
 
@@ -572,11 +588,57 @@ const Doctors = () => {
 };
 
 /* ─────────────────────────────────────────────
-   FACILITIES
+   VASCULAR CARE SECTION (NEW SECTION ADDED)
+───────────────────────────────────────────── */
+const VascularCare = () => (
+  <section className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <Reveal>
+          <span className="inline-block text-rose-600 font-bold text-sm uppercase tracking-widest mb-3">Vascular Care</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            Advanced Vascular Hospital<br />
+            <span className="text-rose-600">in Rajahmundry</span>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Searching for a reliable vascular hospital near Devi Chowk or an experienced vascular surgeon in Rajahmundry? Our vascular specialists diagnose and treat a wide range of conditions with minimally invasive procedures.
+          </p>
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {[
+              'Varicose Veins', 'Peripheral Artery Disease', 'Diabetic Foot Problems', 'Vascular Blockages',
+              'Leg Pain & Swelling', 'Blood Circulation Disorders', 'Non-Healing Ulcers', 'AV Fistula Procedures'
+            ].map(condition => (
+              <div key={condition} className="flex items-center gap-2 text-gray-700 text-sm">
+                <CheckCircle className="w-4 h-4 text-rose-500" />
+                <span>{condition}</span>
+              </div>
+            ))}
+          </div>
+          <a href="#appointment" className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-rose-300/40 transition-all">
+            Consult Vascular Specialist <ChevronRight className="w-4 h-4" />
+          </a>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&h=500&fit=crop&q=80" alt="Vascular Surgery" className="w-full h-auto object-cover" />
+            </div>
+            <div className="absolute -bottom-6 left-6 bg-white rounded-2xl shadow-xl px-5 py-3">
+              <div className="font-bold text-gray-900">Minimally Invasive</div>
+              <div className="text-xs text-gray-500">Faster Recovery</div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─────────────────────────────────────────────
+   FACILITIES (UPDATED)
 ───────────────────────────────────────────── */
 const Facilities = () => (
   <section className="py-20 lg:py-28 bg-gradient-to-br from-blue-950 via-blue-900 to-teal-900 relative overflow-hidden">
-    {/* Decorative */}
     <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
     <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
 
@@ -587,10 +649,10 @@ const Facilities = () => (
         <p className="text-blue-200 max-w-xl mx-auto">State-of-the-art equipment and infrastructure for the best patient outcomes</p>
       </Reveal>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {facilities.map(({ name, icon: Icon, description, specs }, i) => (
           <Reveal key={name} delay={i * 0.08}>
-            <div className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 hover:bg-white/20 hover:-translate-y-2 transition-all duration-300 cursor-default">
+            <div className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-6 hover:bg-white/20 hover:-translate-y-2 transition-all duration-300 cursor-default h-full">
               <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                 <Icon className="w-6 h-6 text-white" />
               </div>
@@ -606,9 +668,149 @@ const Facilities = () => (
 );
 
 /* ─────────────────────────────────────────────
-   TESTIMONIALS
+   AFFORDABLE CARE SECTION (NEW)
 ───────────────────────────────────────────── */
-const Testimonials = () => {
+const AffordableCare = () => (
+  <section className="py-20 lg:py-28 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <Reveal delay={0.2} className="order-2 lg:order-1">
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=700&h=500&fit=crop&q=80" alt="Affordable Healthcare" className="w-full h-auto object-cover" />
+            </div>
+            <div className="absolute -top-6 -right-6 bg-emerald-500 rounded-2xl shadow-xl px-5 py-4 text-white">
+              <div className="font-black text-2xl">Save 30%</div>
+              <div className="text-xs text-emerald-100">On Health Packages</div>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal className="order-1 lg:order-2">
+          <span className="inline-block text-emerald-600 font-bold text-sm uppercase tracking-widest mb-3">Affordable Care</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            Affordable Private Hospital<br />
+            <span className="text-emerald-600">in Rajahmundry</span>
+          </h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Quality healthcare should be accessible to everyone. We are known as an affordable hospital in Rajahmundry, providing advanced treatments at reasonable costs without compromising on patient care.
+          </p>
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            {[
+              'Affordable Consultation', 'Cost-Effective Treatments', 'Health Checkup Packages', 'Insurance Support',
+              'Modern Facilities', 'EMI Options Available', 'Corporate Health Plans', 'Senior Citizen Discounts'
+            ].map(item => (
+              <div key={item} className="flex items-center gap-2 text-gray-700 text-sm">
+                <CheckCircle className="w-4 h-4 text-emerald-500" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex gap-4">
+            <a href="#appointment" className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all">
+              View Health Packages
+            </a>
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─────────────────────────────────────────────
+   EMERGENCY CARE SECTION (UPDATED)
+───────────────────────────────────────────── */
+const EmergencyCare = () => (
+  <section className="py-20 lg:py-28 bg-gradient-to-br from-red-50 to-orange-50">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-12">
+        <Reveal>
+          <span className="inline-block text-red-600 font-bold text-sm uppercase tracking-widest mb-3">24/7 Emergency Care</span>
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-4">Emergency Hospital Near Devi Chowk Rajahmundry</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">Medical emergencies require immediate attention. Our hospital operates as a fully equipped 24 hours hospital in Rajahmundry.</p>
+        </Reveal>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: Ambulance, title: 'Ambulance Assistance', desc: 'Rapid response with advanced life support', color: 'from-red-500 to-orange-500' },
+          { icon: Database, title: 'Emergency ICU Support', desc: '24/7 critical care monitoring', color: 'from-red-600 to-rose-500' },
+          { icon: Activity, title: 'Trauma Care', desc: 'Specialized trauma team ready', color: 'from-orange-500 to-red-500' },
+          { icon: Stethoscope, title: 'Critical Care Specialists', desc: 'Expert doctors always available', color: 'from-rose-500 to-pink-500' },
+        ].map((item, i) => (
+          <Reveal key={item.title} delay={i * 0.1}>
+            <div className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all hover:-translate-y-2">
+              <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                <item.icon className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">{item.title}</h3>
+              <p className="text-gray-500 text-sm">{item.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+      <div className="mt-10 text-center">
+        <div className="inline-flex items-center gap-4 bg-red-600 text-white px-6 py-3 rounded-full font-bold">
+          <Phone className="w-5 h-5 animate-pulse" />
+          Emergency Helpline: 102 / 108
+          <span className="text-xs bg-white/20 px-2 py-1 rounded-full">24x7</span>
+        </div>
+        <p className="text-gray-500 text-sm mt-4">If you need an emergency hospital in Lakshmivarapupeta or Rajahmundry, our emergency team is available round the clock.</p>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─────────────────────────────────────────────
+   WHY CHOOSE US (NEW SECTION)
+───────────────────────────────────────────── */
+const WhyChooseUs = () => (
+  <section className="py-20 lg:py-28 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Reveal className="text-center mb-12">
+        <span className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3">Why Choose Us</span>
+        <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-4">Why We Are One of the Best Hospitals in Rajahmundry</h2>
+        <p className="text-gray-500 max-w-2xl mx-auto">Our commitment to clinical excellence and compassionate healthcare makes us a preferred private hospital in Rajahmundry.</p>
+      </Reveal>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: Award, title: 'Experienced Medical Specialists', desc: 'Highly qualified doctors across all specialities' },
+          { icon: Microscope, title: 'Advanced Medical Technology', desc: 'Modern equipment for accurate diagnosis' },
+          { icon: Ambulance, title: '24/7 Emergency Services', desc: 'Round-the-clock emergency care' },
+          { icon: Heart, title: 'Patient-Centered Care', desc: 'Personalized treatment plans for every patient' },
+          { icon: Scissors, title: 'Modern Operation Theatres', desc: 'Modular OTs with laminar airflow' },
+          { icon: Database, title: 'Advanced Diagnostics', desc: 'Rapid and accurate lab services' },
+          { icon: DollarSignIcon, title: 'Affordable Healthcare', desc: 'Cost-effective treatment options' },
+          { icon: MapPin, title: 'Convenient Location', desc: 'Near Devi Chowk, Rajahmundry' },
+        ].map((item, i) => (
+          <Reveal key={item.title} delay={i * 0.07}>
+            <div className="group text-center p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <item.icon className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-bold text-gray-900 text-md mb-2">{item.title}</h3>
+              <p className="text-gray-500 text-xs">{item.desc}</p>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// DollarSignIcon component
+const DollarSignIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="12" y1="1" x2="12" y2="23"></line>
+    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+  </svg>
+);
+
+/* ─────────────────────────────────────────────
+   TESTIMONIALS (UPDATED LOCATIONS)
+───────────────────────────────────────────── */
+const TestimonialsSection = () => {
   const [cur, setCur] = useState(0);
   const next = () => setCur(p => (p + 1) % testimonials.length);
   const prev = () => setCur(p => (p - 1 + testimonials.length) % testimonials.length);
@@ -624,7 +826,6 @@ const Testimonials = () => {
 
         <Reveal delay={0.1} className="relative max-w-3xl mx-auto">
           <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-xl text-center border border-gray-100 relative overflow-hidden">
-            {/* Quote decor */}
             <div className="absolute top-6 left-8 text-8xl text-blue-100 font-serif leading-none select-none">"</div>
 
             <div className="flex justify-center gap-1 mb-6">
@@ -642,7 +843,6 @@ const Testimonials = () => {
             <p className="text-gray-400 text-sm">{testimonials[cur].location} · {new Date(testimonials[cur].date).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })}</p>
           </div>
 
-          {/* Controls */}
           <button onClick={prev} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-50 hover:scale-110 transition-all border border-gray-100">
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           </button>
@@ -663,7 +863,7 @@ const Testimonials = () => {
 };
 
 /* ─────────────────────────────────────────────
-   BLOG
+   BLOG (UPDATED)
 ───────────────────────────────────────────── */
 const Blog = () => (
   <section className="py-20 lg:py-28 bg-white">
@@ -699,7 +899,7 @@ const Blog = () => (
 );
 
 /* ─────────────────────────────────────────────
-   APPOINTMENT
+   APPOINTMENT (UPDATED)
 ───────────────────────────────────────────── */
 const Appointment = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '', department: '', doctor: '', date: '', time: '', message: '' });
@@ -731,8 +931,8 @@ const Appointment = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-12">
           <span className="text-teal-300 font-bold text-sm uppercase tracking-widest">Schedule a Visit</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4">Book an Appointment</h2>
-          <p className="text-blue-100 max-w-xl mx-auto">Fill out the form and our team will contact you within 30 minutes</p>
+          <h2 className="text-4xl lg:text-5xl font-black text-white mt-2 mb-4">Book an Appointment Today</h2>
+          <p className="text-blue-100 max-w-xl mx-auto">Looking for the best hospital in Rajahmundry or a trusted multispeciality hospital near Devi Chowk? Contact our team today.</p>
         </Reveal>
 
         <Reveal delay={0.15} className="max-w-2xl mx-auto">
@@ -799,7 +999,7 @@ const Appointment = () => {
 };
 
 /* ─────────────────────────────────────────────
-   EMERGENCY BANNER
+   EMERGENCY BANNER (UPDATED)
 ───────────────────────────────────────────── */
 const EmergencyBanner = () => (
   <section className="py-16 bg-gradient-to-r from-red-600 to-rose-700 relative overflow-hidden">
@@ -809,7 +1009,7 @@ const EmergencyBanner = () => (
         <Ambulance className="w-10 h-10 animate-pulse" />
         <h2 className="text-3xl md:text-4xl font-black">24/7 Emergency & Trauma Care</h2>
       </div>
-      <p className="text-lg mb-8 text-red-100 max-w-2xl mx-auto">Immediate medical attention when you need it most. Our emergency team is always ready to respond.</p>
+      <p className="text-lg mb-8 text-red-100 max-w-2xl mx-auto">Immediate medical attention when you need it most. Our emergency team is always ready to respond from our location near Devi Chowk, Rajahmundry.</p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="tel:+919876543210" className="inline-flex items-center justify-center gap-3 bg-white text-red-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-gray-50 hover:-translate-y-1 hover:shadow-xl transition-all duration-200">
           <Phone className="w-6 h-6" /> Emergency: +91 98765 43210
@@ -818,13 +1018,13 @@ const EmergencyBanner = () => (
           Non-Emergency Consultation
         </a>
       </div>
-      <p className="text-sm mt-6 text-red-200">Available 24 hours · Ambulance service within 10 minutes</p>
+      <p className="text-sm mt-6 text-red-200">Available 24 hours · Ambulance service within 10 minutes · Near Devi Chowk, Rajahmundry</p>
     </div>
   </section>
 );
 
 /* ─────────────────────────────────────────────
-   CONTACT
+   CONTACT (UPDATED FOR RAJAHMUNDRY)
 ───────────────────────────────────────────── */
 const Contact = () => (
   <section id="contact" className="py-20 lg:py-28 bg-gray-50">
@@ -837,8 +1037,8 @@ const Contact = () => (
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         <Reveal className="space-y-4">
           {[
-            { icon: MapPin, title: 'Address', content: '123, Hospital Road, Annanagar, Chennai – 600040, Tamil Nadu, India' },
-            { icon: Phone, title: 'Phone Numbers', content: 'Appointments: +91 44 1234 5678\nEmergency: 102 / +91 98765 43210\nAmbulance: 108' },
+            { icon: MapPin, title: 'Address', content: 'Near Devi Chowk, Lakshmivarapupeta, Rajahmundry – 533103, Andhra Pradesh, India' },
+            { icon: Phone, title: 'Phone Numbers', content: 'Appointments: +91 883 123 4567\nEmergency: 102 / +91 98765 43210\nAmbulance: 108' },
             { icon: Clock, title: 'Working Hours', content: 'Emergency: 24/7\nOP: 8:00 AM – 8:00 PM (Mon–Sat)\nSunday: 9:00 AM – 2:00 PM' },
             { icon: Mail, title: 'Email', content: 'General: care@dharanihospital.com\nAppointments: appointments@dharanihospital.com' },
           ].map(({ icon: Icon, title, content }) => (
@@ -858,7 +1058,7 @@ const Contact = () => (
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3815.3204284816857!2d81.7739433!3d17.007945699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a544c995fa65%3A0xac3d96bbd21b5040!2sDharani%20Vascular%20Multispeciality%20Hospital!5e0!3m2!1sen!2sin!4v1775554336378!5m2!1sen!2sin"
             className="w-full h-full"
-            title="Hospital Location"
+            title="Hospital Location - Near Devi Chowk, Rajahmundry"
             allowFullScreen
             loading="lazy"
           />
@@ -869,7 +1069,7 @@ const Contact = () => (
 );
 
 /* ─────────────────────────────────────────────
-   FOOTER
+   FOOTER (UPDATED)
 ───────────────────────────────────────────── */
 const Footer = () => (
   <footer className="bg-gray-950 text-gray-400 pt-16 pb-8">
@@ -883,7 +1083,7 @@ const Footer = () => (
               className="h-7 sm:h-8 md:h-10 w-auto object-contain"
             />
           </div>
-          <p className="text-sm leading-relaxed text-gray-500">Compassionate care, medical excellence, and patient-first approach since 2005.</p>
+          <p className="text-sm leading-relaxed text-gray-500">Compassionate care, medical excellence, and patient-first approach since 2005. Located near Devi Chowk, Rajahmundry.</p>
           <div className="flex gap-3 mt-5">
             {['f', 't', 'in', 'ig'].map(s => (
               <a key={s} href="#" className="w-9 h-9 bg-gray-800 hover:bg-blue-600 rounded-xl flex items-center justify-center transition-colors duration-200 text-xs font-bold text-gray-400 hover:text-white">
@@ -922,11 +1122,14 @@ const Footer = () => (
             <Shield className="w-4 h-4 text-teal-500" />
             <span>NABH & NABL Accredited</span>
           </div>
+          <div className="mt-3 text-xs text-gray-600">
+            <span>📍 Near Devi Chowk, Rajahmundry</span>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-gray-800 pt-8 text-center text-xs text-gray-600">
-        © {new Date().getFullYear()} Dharani Hospital. All rights reserved. &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; Terms of Use
+        © {new Date().getFullYear()} Dharani Hospital, Rajahmundry. All rights reserved. &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; Terms of Use
       </div>
     </div>
   </footer>
@@ -978,9 +1181,13 @@ export default function App() {
         <Hero />
         <About />
         <Services />
+        <VascularCare />
         <Doctors />
+        <EmergencyCare />
         <Facilities />
-        <Testimonials />
+        <AffordableCare />
+        <WhyChooseUs />
+        <TestimonialsSection />
         <Blog />
         <Appointment />
         <EmergencyBanner />
