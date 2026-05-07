@@ -468,10 +468,6 @@ const Doctors = () => {
                     {doc.education}
                   </p>
 
-                  <p className="mt-3 text-gray-500 text-sm">
-                    {doc.experience}+ Years Experience
-                  </p>
-
                   {/* Availability */}
                   <div className="mt-5">
                     <span
