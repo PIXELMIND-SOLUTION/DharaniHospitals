@@ -21,12 +21,49 @@ const services = [
 ];
 
 const doctors = [
-  { id: 1, name: 'Dr. Priya Sharma', specialization: 'Interventional Cardiologist', experience: 12, image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&q=80', available: true, education: 'MBBS, MD, DM (Cardiology)' },
-  { id: 2, name: 'Dr. Rajesh Kumar', specialization: 'Vascular & Endovascular Surgeon', experience: 15, image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&q=80', available: true, education: 'MBBS, MS, MCh (Vascular Surgery)' },
-  { id: 3, name: 'Dr. Anjali Mehta', specialization: 'Obstetrician & Gynecologist', experience: 10, image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&q=80', available: false, education: 'MBBS, MD, DNB (OBG)' },
-  { id: 4, name: 'Dr. Sanjay Reddy', specialization: 'General & Laparoscopic Surgeon', experience: 18, image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&q=80', available: true, education: 'MBBS, MS, FMAS' },
-  { id: 5, name: 'Dr. Meera Krishnan', specialization: 'Senior Cardiologist', experience: 20, image: 'https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=400&h=400&fit=crop&q=80', available: true, education: 'MBBS, MD, DM (Cardiology)' },
-  { id: 6, name: 'Dr. Vikram Singh', specialization: 'Orthopedic Surgeon', experience: 14, image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&q=80', available: true, education: 'MBBS, MS (Ortho), DNB' },
+  {
+    id: 1,
+    name: "Dr. V.N.V.R. Satish",
+    specialization: "General Surgery",
+    education: "DNB (General Surgery), FNB (Minimal Access Surgery)",
+    experience: 12,
+    available: true,
+  },
+  {
+    id: 2,
+    name: "Dr. M. Rajalakshmi",
+    specialization: "General Medicine",
+    education:
+      "MBBS, MD (General Medicine), DRNB Neurology, Consultant Neuro Physician",
+    experience: 10,
+    available: true,
+  },
+  {
+    id: 3,
+    name: "Dr. MG Srinivasa Sarma",
+    specialization: "Anaesthesia",
+    education:
+      "MD (Anaesthesia), Consultant Anaesthesiologist & Intensivist",
+    experience: 9,
+    available: false,
+  },
+  {
+    id: 4,
+    name: "Dr. Chenna Kesava Keerthi Madireddi",
+    specialization: "General Medicine",
+    education:
+      "MBBS, MD (General Medicine), Consultant Physician",
+    experience: 8,
+    available: true,
+  },
+  {
+    id: 5,
+    name: "Dr. Chandini",
+    specialization: "OBGY",
+    education: "Degrees will be updated soon",
+    experience: 5,
+    available: true,
+  },
 ];
 
 const testimonials = [
@@ -365,33 +402,98 @@ const Doctors = () => {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section id="doctors" className="py-20 lg:py-28 bg-white">
+    <section
+      id="doctors"
+      className="py-20 lg:py-28 bg-gradient-to-b from-white to-sky-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-12">
-          <span className="text-teal-600 font-bold text-sm uppercase tracking-widest">Our Team</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-2 mb-4">Meet Our Expert Doctors</h2>
-          <p className="text-gray-500 max-w-xl mx-auto">Experienced specialists dedicated to providing exceptional patient care</p>
+
+        {/* Heading */}
+        <Reveal className="text-center mb-16">
+          <span className="text-cyan-600 font-bold text-sm uppercase tracking-[0.25em]">
+            Our Doctors
+          </span>
+
+          <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mt-3 mb-5">
+            Meet Our Expert Specialists
+          </h2>
+
+          <p className="text-gray-500 max-w-2xl mx-auto text-lg">
+            Dedicated medical professionals committed to exceptional patient care.
+          </p>
         </Reveal>
 
+        {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {doctors.map((doc, i) => (
             <Reveal key={doc.id} delay={i * 0.08}>
-              <div className="group rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-blue-100 transition-all duration-300 hover:-translate-y-2 bg-white border border-gray-100 hover:border-blue-100 flex flex-col h-full">
-                <div className="relative overflow-hidden h-64">
-                  <img src={doc.image} alt={doc.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold ${doc.available ? 'bg-emerald-500 text-white' : 'bg-amber-500 text-white'}`}>
-                    {doc.available ? '✓ Available Today' : 'Next: Tomorrow'}
-                  </span>
+              <div className="group relative overflow-hidden rounded-[32px] bg-white border border-sky-100 shadow-lg hover:shadow-cyan-200/60 hover:-translate-y-2 transition-all duration-500 flex flex-col">
+
+                {/* Top Glow */}
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-sky-500" />
+
+                {/* Doctor Avatar */}
+                <div className="pt-10 flex justify-center">
+                  <div className="relative">
+
+                    {/* Outer Rings */}
+                    <div className="absolute inset-0 rounded-full border-4 border-cyan-200 scale-125 animate-pulse" />
+                    <div className="absolute inset-0 rounded-full border-2 border-blue-300 scale-[1.45]" />
+
+                    {/* Initial Circle */}
+                    <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center text-white text-4xl font-black shadow-2xl">
+                      {doc.name
+                        .replace("Dr.", "")
+                        .trim()
+                        .split(" ")
+                        .map((n) => n[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-black text-gray-900 mb-1">{doc.name}</h3>
-                  <p className="text-blue-600 font-semibold text-sm mb-1">{doc.specialization}</p>
-                  <p className="text-gray-500 text-sm mb-1">{doc.experience}+ yrs experience</p>
-                  <p className="text-gray-400 text-xs mb-5">{doc.education}</p>
-                  <button onClick={() => setSelected(doc)}
-                    className="mt-auto w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white py-3 rounded-2xl font-bold hover:shadow-lg hover:shadow-blue-300/40 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2">
-                    <Calendar className="w-4 h-4" /> Book Appointment
+
+                {/* Content */}
+                <div className="p-7 flex flex-col flex-1 text-center">
+
+                  <h3 className="text-2xl font-black text-red-600 leading-snug">
+                    {doc.name}
+                  </h3>
+
+                  <p className="mt-3 text-blue-700 font-bold text-lg">
+                    {doc.specialization}
+                  </p>
+
+                  <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                    {doc.education}
+                  </p>
+
+                  <p className="mt-3 text-gray-500 text-sm">
+                    {doc.experience}+ Years Experience
+                  </p>
+
+                  {/* Availability */}
+                  <div className="mt-5">
+                    <span
+                      className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold ${doc.available
+                        ? "bg-emerald-100 text-emerald-700"
+                        : "bg-amber-100 text-amber-700"
+                        }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-current" />
+                      {doc.available
+                        ? "Available Today"
+                        : "Next Available Tomorrow"}
+                    </span>
+                  </div>
+
+                  {/* Button */}
+                  <button
+                    onClick={() => setSelected(doc)}
+                    className="mt-8 w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-700 text-white font-bold shadow-lg hover:shadow-cyan-300/50 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    Book Appointment
                   </button>
                 </div>
               </div>
@@ -402,28 +504,67 @@ const Doctors = () => {
 
       {/* Modal */}
       {selected && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4" onClick={() => setSelected(null)}>
-          <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl" onClick={e => e.stopPropagation()}
-            style={{ animation: 'modalIn 0.3s ease' }}>
-            <div className="flex justify-between items-start mb-6">
-              <div>
-                <h3 className="text-2xl font-black text-gray-900">{selected.name}</h3>
-                <p className="text-blue-600 font-semibold">{selected.specialization}</p>
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="bg-white rounded-[32px] max-w-md w-full p-8 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex justify-between items-start mb-8">
+
+              <div className="flex gap-4 items-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center text-white text-2xl font-black">
+                  {selected.name.charAt(3)}
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-black text-gray-900">
+                    {selected.name}
+                  </h3>
+
+                  <p className="text-blue-700 font-semibold">
+                    {selected.specialization}
+                  </p>
+                </div>
               </div>
-              <button onClick={() => setSelected(null)} className="w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-xl flex items-center justify-center transition-colors">
-                <X className="w-4 h-4" />
+
+              <button
+                onClick={() => setSelected(null)}
+                className="w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 flex items-center justify-center"
+              >
+                <X className="w-5 h-5" />
               </button>
             </div>
+
+            {/* Form */}
             <div className="space-y-4">
-              <input type="text" placeholder="Full Name *" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-shadow" />
-              <input type="tel" placeholder="Phone Number *" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-shadow" />
-              <input type="date" className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-shadow" />
-              <select className="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 outline-none text-gray-600">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                className="w-full border border-gray-200 rounded-2xl px-4 py-3 focus:ring-2 focus:ring-cyan-500 outline-none"
+              />
+
+              <input
+                type="tel"
+                placeholder="Phone Number *"
+                className="w-full border border-gray-200 rounded-2xl px-4 py-3 focus:ring-2 focus:ring-cyan-500 outline-none"
+              />
+
+              <input
+                type="date"
+                className="w-full border border-gray-200 rounded-2xl px-4 py-3 focus:ring-2 focus:ring-cyan-500 outline-none"
+              />
+
+              <select className="w-full border border-gray-200 rounded-2xl px-4 py-3 focus:ring-2 focus:ring-cyan-500 outline-none text-gray-600">
                 <option>Morning (9 AM – 12 PM)</option>
                 <option>Afternoon (12 PM – 4 PM)</option>
                 <option>Evening (4 PM – 8 PM)</option>
               </select>
-              <button className="w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white py-3.5 rounded-2xl font-bold hover:shadow-lg hover:shadow-blue-300/40 transition-all">
+
+              <button className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-700 text-white font-bold shadow-lg hover:shadow-cyan-300/40 transition-all">
                 Confirm Booking
               </button>
             </div>
