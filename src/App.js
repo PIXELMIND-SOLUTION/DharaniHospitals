@@ -420,13 +420,9 @@ const Navbar = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3'}`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">DH</span>
-          </div>
-          <div className="flex flex-col leading-tight">
-            <span className="font-black text-gray-800 text-sm tracking-tight">DHARANI</span>
-            <span className="text-[10px] font-semibold text-blue-600 tracking-wider">HOSPITALS</span>
+        <a href="/" className="flex items-center gap-2 group font-bold text-xl text-gray-800">
+          <div className="flex items-center justify-center">
+            <img src="/logo.png" alt="Dharani Hospitals Logo" className="object-contain" />
           </div>
         </a>
 
@@ -1692,12 +1688,12 @@ const Footer = () => (
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">DH</span>
+            <div className="rounded-lg flex items-center justify-center">
+              <img src="/logo1.png" alt="Dharani Hospitals Logo" className="w-8 h-8 object-contain" />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="font-black text-white text-sm tracking-tight">DHARANI</span>
-              <span className="text-[10px] font-semibold text-teal-400 tracking-wider">HOSPITALS</span>
+              <span className="font-black text-white text-sm tracking-tight">DHARANI HOSPITALS</span>
+              <span className="text-[10px] font-semibold text-teal-400 tracking-wider">VASCULAR & MULTISPECIALITY</span>
             </div>
           </div>
           <p className="text-sm leading-relaxed text-gray-500">Compassionate care, medical excellence, and patient-first approach since 2005. Located near Devi Chowk, Rajahmundry. Recognized as the best multispeciality and vascular hospital in Rajahmundry.</p>
